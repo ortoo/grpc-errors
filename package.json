@@ -12,7 +12,7 @@
     "grpc",
     "errors"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "grpc": "^1.0.1",
     "lodash.camelcase": "^4.3.0",
