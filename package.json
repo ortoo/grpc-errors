@@ -1,0 +1,26 @@
+{
+  "name": "grpc-errors",
+  "version": "1.0.0",
+  "description": "Create GRPC errors",
+  "homepage": "",
+  "author": "James Sharp",
+  "files": [
+    "lib"
+  ],
+  "main": "index.js",
+  "keywords": [
+    "grpc",
+    "errors"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "grpc": "^1.0.1",
+    "lodash.camelcase": "^4.3.0",
+    "lodash.upperfirst": "^4.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.1.1",
+    "eslint-config-xo-space": "^0.15.0"
+  },
+  "repository": "ortoo/grpc-errors"
+}
