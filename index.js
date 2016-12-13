@@ -19,6 +19,7 @@ function constructError(className, code) {
   function GRPCError(message) {
     // create the error object
     this.message = message;
+    this.code = code;
 
     // redefine the error name
     Object.defineProperty(this, 'name', {
