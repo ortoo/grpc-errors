@@ -1,6 +1,7 @@
 const inherits = require('util').inherits;
 
 const grpc = require('grpc');
+const VError = require('verror').VError;
 const upperFirst = require('lodash.upperfirst');
 const camelCase = require('lodash.camelcase');
 
@@ -16,9 +17,10 @@ function constructErrors() {
 }
 
 function constructError(className, code) {
-  function GRPCError(message) {
+  function GRPCError(...args) {
+    VError.apply(this, args);
+
     // create the error object
-    this.message = message;
     this.code = code;
 
     // redefine the error name
@@ -28,11 +30,9 @@ function constructError(className, code) {
       value: className,
       writable: true
     });
-
-    Error.captureStackTrace(this, this.constructor);
   }
 
-  inherits(GRPCError, Error);
+  inherits(GRPCError, VError);
 
   GRPCError.prototype.code = code;
 
