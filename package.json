@@ -14,7 +14,6 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "grpc": "^1.0.1",
     "lodash.camelcase": "^4.3.0",
     "lodash.upperfirst": "^4.3.1",
     "verror": "^1.9.0"
