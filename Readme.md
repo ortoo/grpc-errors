@@ -31,4 +31,4 @@ var err = new grpcErrors.AlreadyExistsError('The file already exists!');
 - `InternalError`
 - `UnavailableError`
 - `DataLossError`
-- `UnathenticatedError`
+- `UnauthenticatedError`
