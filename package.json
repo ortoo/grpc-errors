@@ -1,6 +1,6 @@
 {
   "name": "grpc-errors",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Create GRPC errors",
   "homepage": "",
   "author": "James Sharp",
@@ -14,9 +14,10 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "verror": "^1.9.0"
+    "verror": "^1.10.0"
   },
   "devDependencies": {
+    "@types/verror": "^1.10.3",
     "eslint": "^3.1.1",
     "eslint-config-xo-space": "^0.15.0"
   },

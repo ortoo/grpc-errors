@@ -1,4 +1,6 @@
-class GRPCError extends Error {
+import {VError} from 'verror';
+
+class GRPCError extends VError {
   code: number;
   name: string;
 }
