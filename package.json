@@ -5,7 +5,8 @@
   "homepage": "",
   "author": "James Sharp",
   "files": [
-    "lib"
+    "lib",
+    "index.d.ts"
   ],
   "main": "index.js",
   "keywords": [
