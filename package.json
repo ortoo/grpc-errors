@@ -15,10 +15,10 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "@types/verror": "^1.10.3",
     "verror": "^1.10.0"
   },
   "devDependencies": {
-    "@types/verror": "^1.10.3",
     "eslint": ">=4.18.2",
     "eslint-config-xo-space": "^0.15.0"
   },
