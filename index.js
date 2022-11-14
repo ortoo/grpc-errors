@@ -1,37 +1,39 @@
-const inherits = require('util').inherits;
+const inherits = require("util").inherits;
 
-const VError = require('verror').VError;
+const VError = require("verror").VError;
 
-const codes = {
-  Ok: 0,
-  Cancelled: 1,
-  Unknown: 2,
-  InvalidArgument: 3,
-  DeadlineExceeded: 4,
-  NotFound: 5,
-  AlreadyExists: 6,
-  PermissionDenied: 7,
-  ResourceExhausted: 8,
-  FailedPrecondition: 9,
-  Aborted: 10,
-  OutOfRange: 11,
-  Unimplemented: 12,
-  Internal: 13,
-  Unavailable: 14,
-  DataLoss: 15,
-  Unauthenticated: 16
-};
-
-constructErrors();
-
-function constructErrors() {
-  for (let name of Object.keys(codes)) {
-    let className = name + 'Error';
-    let code = codes[name];
-
-    exports[className] = constructError(className, code);
-  }
-}
+module.exports.OkError = constructError("OkError", 0);
+module.exports.CancelledError = constructError("CancelledError", 1);
+module.exports.UnknownError = constructError("UnknownError", 2);
+module.exports.InvalidArgumentError = constructError("InvalidArgumentError", 3);
+module.exports.DeadlineExceededError = constructError(
+  "DeadlineExceededError",
+  4
+);
+module.exports.NotFoundError = constructError("NotFoundError", 5);
+module.exports.AlreadyExistsError = constructError("AlreadyExistsError", 6);
+module.exports.PermissionDeniedError = constructError(
+  "PermissionDeniedError",
+  7
+);
+module.exports.ResourceExhaustedError = constructError(
+  "ResourceExhaustedError",
+  8
+);
+module.exports.FailedPreconditionError = constructError(
+  "FailedPreconditionError",
+  9
+);
+module.exports.AbortedError = constructError("AbortedError", 10);
+module.exports.OutOfRangeError = constructError("OutOfRangeError", 11);
+module.exports.UnimplementedError = constructError("UnimplementedError", 12);
+module.exports.InternalError = constructError("InternalError", 13);
+module.exports.UnavailableError = constructError("UnavailableError", 14);
+module.exports.DataLossError = constructError("DataLossError", 15);
+module.exports.UnauthenticatedError = constructError(
+  "UnauthenticatedError",
+  16
+);
 
 function constructError(className, code) {
   function GRPCError(...args) {
@@ -41,11 +43,11 @@ function constructError(className, code) {
     this.code = code;
 
     // redefine the error name
-    Object.defineProperty(this, 'name', {
+    Object.defineProperty(this, "name", {
       enumerable: false,
       configurable: true,
       value: className,
-      writable: true
+      writable: true,
     });
   }
 
